@@ -1,11 +1,16 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import Home from "../page";
 import styles from "../page.module.css";
 
 export default function Grape({ detailContent }: { detailContent: any }) {
   const names: string[] = nameGenerator();
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(setIndex(index + 1), [index]);
 
   function nameGenerator(): string[] {
     const catergories: string[] = [];
@@ -27,6 +32,7 @@ export default function Grape({ detailContent }: { detailContent: any }) {
         <div className={styles.button_list}>
           {names.map((name) => (
             <button
+              key={index}
               type="button"
               className={styles.button}
               onClick={() => {

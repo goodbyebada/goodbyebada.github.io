@@ -1,11 +1,8 @@
-
-
 {
   "name": "clone-app",
   "version": "0.1.0",
   "private": true,
-
-
+  "homepage": "https://goodbyebada.github.io/veenoverse_clone/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
