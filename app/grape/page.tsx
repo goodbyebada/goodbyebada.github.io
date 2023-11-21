@@ -10,7 +10,7 @@ interface DataType {
   index: number;
 }
 
-export default function Grape({ detailContent }: { detailContent: any }) {
+export default function Grape({ detailContent }: { detailContent: string }) {
   const names: DataType[] = nameGenerator();
 
   function nameGenerator(): DataType[] {

@@ -1,21 +1,27 @@
 "use client";
+
 import { usePathname, useRouter } from "next/navigation";
-import Home from "@/app/page";
 import Grape from "../page";
+import { useEffect, useState } from "react";
 
 export default function Detail() {
   const pathname = usePathname();
-  const router = useRouter();
+  const [content, setContent] = useState("");
 
-  function getLast(): String {
-    let category = pathname.split("/");
-    console.log(category);
-    return category[category.length - 1];
-  }
+  useEffect(() => {
+    function getLast() {
+      let category = pathname.split("/");
+      setContent(category[category.length - 1]);
+    }
+
+    getLast();
+    //clean up
+  }, [pathname]);
+  // useEffect를 pathname이 바뀔 때마다 호출
 
   return (
     <>
-      <Grape detailContent={<div>{getLast()}</div>} />
+      <Grape detailContent={content} />
     </>
   );
 }
