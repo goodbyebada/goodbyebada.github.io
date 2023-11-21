@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
-  basePath: "/veenoverse_clone",
-};
+const nextConfig = {};
 
 module.exports = nextConfig;

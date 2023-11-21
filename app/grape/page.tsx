@@ -5,22 +5,24 @@ import { useEffect, useState } from "react";
 import Home from "../page";
 import styles from "../page.module.css";
 
+interface DataType {
+  data: string;
+  index: number;
+}
+
 export default function Grape({ detailContent }: { detailContent: any }) {
-  const names: string[] = nameGenerator();
+  const names: DataType[] = nameGenerator();
 
-  const [index, setIndex] = useState(0);
+  function nameGenerator(): DataType[] {
+    const categories: DataType[] = [];
 
-  useEffect(setIndex(index + 1), [index]);
-
-  function nameGenerator(): string[] {
-    const catergories: string[] = [];
     const alphabets = "abcdefghijklmnopqrstuvwz";
 
     for (let index: number = 0; index < alphabets.length; index += 2) {
       let data = `${alphabets[index]}-${alphabets[index + 1]}`;
-      catergories.push(data);
+      categories.push({ data, index });
     }
-    return catergories;
+    return categories;
   }
 
   const router = useRouter();
@@ -30,13 +32,13 @@ export default function Grape({ detailContent }: { detailContent: any }) {
       <div>
         <h2>About Grape</h2>
         <div className={styles.button_list}>
-          {names.map((name) => (
+          {names.map((e) => (
             <button
-              key={index}
+              key={e.index}
               type="button"
               className={styles.button}
               onClick={() => {
-                router.push(`./grape/${name}`);
+                router.push(`./grape/${e.data}`);
               }}
             >
               {name}

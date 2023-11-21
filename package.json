@@ -2,18 +2,15 @@
   "name": "clone-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://goodbyebada.github.io/veenoverse_clone/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "build": "next build && next export",
-    "predeploy": "npm run build",
-    "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "^14.0.4-canary.4",
+    "next": "^14.0.0",
+    "next.js": "^1.0.3",
     "react": "^18",
     "react-dom": "^18"
   },
