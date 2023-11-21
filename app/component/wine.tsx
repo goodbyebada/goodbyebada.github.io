@@ -1,3 +1,3 @@
 export default function Wine() {
-  return <h2>About Winary</h2>;
+  return <h2>About Wine</h2>;
 }

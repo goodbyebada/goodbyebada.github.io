@@ -21,7 +21,7 @@ export default function Detail() {
 
   return (
     <>
-      <Grape detailContent={content} />
+      <Grape params={content} />
     </>
   );
 }

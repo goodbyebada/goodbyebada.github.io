@@ -12,10 +12,10 @@ interface DataType {
 }
 
 export interface GrapeProps {
-  detailContent: string | null;
+  params: string | null;
 }
 
-export default function Grape({ detailContent }: GrapeProps) {
+export default function Grape({ params }: GrapeProps) {
   const names: DataType[] = nameGenerator();
 
   function nameGenerator(): DataType[] {
@@ -55,16 +55,16 @@ export default function Grape({ detailContent }: GrapeProps) {
   }
 
   function getContent() {
-    if (detailContent == null) {
+    if (params == null) {
       return getDefaultContent();
     } else {
-      return detailContent;
+      return params;
     }
   }
 
   return (
     <>
-      <Home mainContent={getContent()} />
+      <Home params={getContent()} />
     </>
   );
 }
