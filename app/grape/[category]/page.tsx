@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import Grape from "../page";
 import { useEffect, useState } from "react";
+import Home from "@/app/page";
 
 export default function Detail() {
   const pathname = usePathname();
@@ -13,7 +14,6 @@ export default function Detail() {
       let category = pathname.split("/");
       setContent(category[category.length - 1]);
     }
-
     getLast();
     //clean up
   }, [pathname]);

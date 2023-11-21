@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { type } from "os";
 import { useEffect, useState } from "react";
 import Home from "../page";
 import styles from "../page.module.css";
@@ -10,7 +11,11 @@ interface DataType {
   index: number;
 }
 
-export default function Grape({ detailContent }: { detailContent: string }) {
+export interface GrapeProps {
+  detailContent: string | null;
+}
+
+export default function Grape({ detailContent }: GrapeProps) {
   const names: DataType[] = nameGenerator();
 
   function nameGenerator(): DataType[] {
