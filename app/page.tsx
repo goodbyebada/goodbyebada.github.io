@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 export default function Home({ params }: { params: any }) {
   return (
     <main className={styles.main}>
-      <Navbar>{params == null ? <Wine /> : <div>params</div>}</Navbar>
+      <Navbar>{params == null ? <Wine /> : <div>{params}</div>}</Navbar>
     </main>
   );
 }
