@@ -1,9 +1,3 @@
-import Home from "../page";
-
 export default function Wine() {
-  return (
-    <>
-      <h2>About Wine</h2>
-    </>
-  );
+  return <h2>About Winary</h2>;
 }

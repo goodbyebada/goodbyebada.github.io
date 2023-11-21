@@ -41,7 +41,7 @@ export default function Grape({ detailContent }: { detailContent: any }) {
                 router.push(`./grape/${e.data}`);
               }}
             >
-              {name}
+              {e.data}
             </button>
           ))}
         </div>

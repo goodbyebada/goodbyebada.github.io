@@ -14,7 +14,6 @@ export default function Card({ wine }: { wine: WineInfo }) {
       {/* <img src={img} alt={name} /> */}
       <p>{price}$</p>
       <p>{descript}</p>
-
       <h2>hello</h2>
     </div>
   );
