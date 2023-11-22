@@ -1,9 +1,11 @@
 import Home from "../page";
 
 export default function Aritcle() {
+  const content = "About Aritcle";
+
   return (
     <>
-      <Home params={<h2>About Article</h2>} />
+      <Home params={content} />
     </>
   );
 }

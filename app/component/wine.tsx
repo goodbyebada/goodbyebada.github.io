@@ -1,3 +1,6 @@
+import Home from "../page";
+
 export default function Wine() {
-  return <h2>About Wine</h2>;
+  const content = "About Wine";
+  return <>{content}</>;
 }

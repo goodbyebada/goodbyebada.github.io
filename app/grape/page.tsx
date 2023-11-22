@@ -18,6 +18,8 @@ export interface GrapeProps {
 export default function Grape({ params }: GrapeProps) {
   const names: DataType[] = nameGenerator();
 
+  console.log(`${params}`);
+
   function nameGenerator(): DataType[] {
     const categories: DataType[] = [];
 
@@ -55,7 +57,7 @@ export default function Grape({ params }: GrapeProps) {
   }
 
   function getContent() {
-    if (params == null) {
+    if (JSON.stringify(params) == "{}") {
       return getDefaultContent();
     } else {
       return params;
@@ -64,7 +66,7 @@ export default function Grape({ params }: GrapeProps) {
 
   return (
     <>
-      <Home params={getContent()} />
+      <Home params={getContent()} />;
     </>
   );
 }

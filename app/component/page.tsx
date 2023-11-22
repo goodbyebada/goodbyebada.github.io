@@ -1,6 +1,6 @@
 import Card from "./card";
 
-export default function fuckingJS() {
+export default function Test() {
   const list = {
     name: "wineName",
     img: "img정보",

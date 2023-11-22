@@ -1,5 +1,6 @@
 import Home from "../page";
 
 export default function Winary() {
-  return <Home params={<h2>About Winary</h2>} />;
+  const content = "About Winary";
+  return <Home params={content} />;
 }
