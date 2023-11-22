@@ -1,8 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { type } from "os";
-import { useEffect, useState } from "react";
 import Home from "../page";
 import styles from "../page.module.css";
 
@@ -12,13 +10,11 @@ interface DataType {
 }
 
 export interface GrapeProps {
-  params: string | null;
+  params: string;
 }
 
 export default function Grape({ params }: GrapeProps) {
   const names: DataType[] = nameGenerator();
-
-  console.log(`${params}`);
 
   function nameGenerator(): DataType[] {
     const categories: DataType[] = [];
@@ -33,6 +29,15 @@ export default function Grape({ params }: GrapeProps) {
   }
 
   const router = useRouter();
+
+  function isEmptyObj() {
+    if (params.constructor === Object && Object.keys(params).length === 0) {
+      /* default component*/
+      return true;
+    }
+    /* params가 존재할때 */
+    return false;
+  }
 
   function getDefaultContent() {
     return (
@@ -56,8 +61,11 @@ export default function Grape({ params }: GrapeProps) {
     );
   }
 
+  console.log(params);
+  console.log(`--------------`);
+
   function getContent() {
-    if (JSON.stringify(params) == "{}") {
+    if (isEmptyObj()) {
       return getDefaultContent();
     } else {
       return params;
@@ -66,7 +74,7 @@ export default function Grape({ params }: GrapeProps) {
 
   return (
     <>
-      <Home params={getContent()} />;
+      <Home params={getContent()} />
     </>
   );
 }

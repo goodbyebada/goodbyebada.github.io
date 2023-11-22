@@ -4,10 +4,10 @@ import Wine from "./component/wine";
 import styles from "./page.module.css";
 
 export interface ParamsInterface {
-  content: any | null;
+  params: any | null | string;
 }
 
-export default function Home({ params }: { params: ParamsInterface }) {
+export default function Home({ params }: ParamsInterface) {
   function isEmptyObj() {
     if (params.constructor === Object && Object.keys(params).length === 0) {
       /* default component*/
@@ -16,8 +16,7 @@ export default function Home({ params }: { params: ParamsInterface }) {
     /* params가 존재할때 */
     return false;
   }
-
-  console.log(params);
+  // console.log(params);
 
   return (
     <main className={styles.main}>
