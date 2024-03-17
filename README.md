@@ -1,4 +1,4 @@
-## venoverse_clone_page
+## Next.js && TS
 
 <a href="https://veenoverse-clone.vercel.app/"> Come&See! </a>
 
